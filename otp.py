@@ -120,7 +120,7 @@ class otp:
         internet issue or wrong email address that may often happen due to use"""
 
         if self.email_entry.get() != "":
-            self.countdown()
+
             try:
                 try:
                     self.value = random.randint(100000, 999999)
@@ -137,7 +137,7 @@ class otp:
 
                     elif len(self.email_entry.get()) == 10:
                         age1 = "+91" + self.email_entry.get()
-                        client = Client("AC76222c7902866965fb35172f9d2fcb15", "90f29bc8194725f5066c321d209b30cf")
+                        client = Client("Enter SID", "Enter your credential here")
                         client.messages.create(to=(age1), from_="+13863563540", body=self.value)
 
 
@@ -147,6 +147,7 @@ class otp:
 
             except BaseException as msg:
                 print(msg)
+            self.countdown()
         else:
             messagebox.showerror("Empty", "Please Enter Email Address or mobile \nand Click Send OTP")
 
